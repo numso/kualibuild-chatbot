@@ -20,6 +20,7 @@ defmodule Chatbot.MixProject do
 
   defp deps do
     [
+      {:gen_tcp_accept_and_close, "~> 0.1.0"},
       {:httpoison, "~> 1.6"},
       {:jason, "~> 1.2"},
       {:websocket_client, "~> 1.4"}
