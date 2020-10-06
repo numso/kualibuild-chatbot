@@ -8,6 +8,5 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: |
-          git -c user.name='Gigalixir GH Action' -c user.email='dosmun+github@gmail.com' commit --allow-empty -m "trigger deploy"
-          git remote add gigalixir $GIGALIXIR_REMOTE
-          git push gigalixir master
+          git checkout -B redeploy
+          git push "${GIGALIXIR_REMOTE}" redeploy:master
