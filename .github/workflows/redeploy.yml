@@ -1,0 +1,13 @@
+name: Redeploy
+on: pull_request
+env:
+  GIGALIXIR_REMOTE: ${{ secrets.GIGALIXIR_REMOTE }}
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: |
+          git commit --allow-empty -m "trigger deploy"
+          git remote add gigalixir $GIGALIXIR_REMOTE
+          git push gigalixir master
