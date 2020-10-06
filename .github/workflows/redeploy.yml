@@ -1,5 +1,7 @@
 name: Redeploy
-on: pull_request
+on:
+  schedule:
+    - cron: '0 6 * * *'
 env:
   GIGALIXIR_REMOTE: ${{ secrets.GIGALIXIR_REMOTE }}
 jobs:
